@@ -59,13 +59,21 @@ h2 {
  
 }
 
-.box-lembrar-senha {
+.div-box-formato {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  width:100%;
+.box-escolher-formato {
+
+  margin-top: 1rem;
+  width:50%;
   float:left;
   background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 25px;
+  border-top: 1px solid #000000;
+  padding: 10px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;

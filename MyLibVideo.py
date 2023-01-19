@@ -11,18 +11,16 @@ def home():
 def downloadVídeo():
     try:
         url = request.form['url']
+        formato = request.form['formato']
         yt = YouTube(url)
-        # for stream in yt.streams:
-        #     print(stream)
-        video = yt.streams.get_highest_resolution()
-        video.download('C:/Users/einst/Downloads')
-        audio = yt.streams.filter(only_audio=True)[0]
-        title = yt.title + '.mp3'
-        audio.download('C:/Users/einst/Downloads', filename=title)
-        if(video.download('C:/Users/einst/Downloads')):
-            success = 'Sucesso ao baixar vídeo'
+        if(formato == 'mp3'):
+            audio = yt.streams.filter(only_audio=True)[0]
+            title = yt.title + '.mp3'
+            audio.download('C:/Users/einst/Downloads', filename=title)
         else:
-            success = 'Falha ao baixar vídeo'
+            video = yt.streams.get_highest_resolution()
+            video.download('C:/Users/einst/Downloads')
+
         return render_template('index.html')
     except Exception as error:
         print(error)
