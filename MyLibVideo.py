@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from pytube import YouTube
 
 app = Flask(__name__)
@@ -19,9 +19,11 @@ def downloadVídeo():
             audio.download('C:/Users/einst/Downloads', filename=title)
         else:
             video = yt.streams.get_highest_resolution()
-            video.download('C:/Users/einst/Downloads')
-
-        return render_template('index.html')
+            # video.download('C:/Users/einst/Downloads')
+            title = yt.title + '.mp4'
+            arquivo = f'{video.url}'
+        return render_template('index.html', arquivo=arquivo)
     except Exception as error:
         print(error)
+
 app.run()

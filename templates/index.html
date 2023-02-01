@@ -8,18 +8,21 @@
 </head>
 <body>
     <div class="wrapper fadeInDown">
-        <div class="content-login">
+        <div class="content-main">
             <h2 class="active"> Copie e cole a url no campo abaixo </h2>
-            <form class="box-login" method="post" action="/downloadVideo">
+            <form class="box-main" method="post" action="/downloadVideo">
               <input type="text" id="email" class="campo" name="url" placeholder="Video url">
               <input type="submit" class="botao" value="Procurar vídeo">
               <div class="div-box-formato">
-                <select class="box-escolher-formato" name="formato">
-                  <option class="box-escolher-formato" value="mp4" selected>MP4</option>
-                  <option class="box-escolher-formato" value="mp3">MP3</option>
+                <select class="box-escolher-select" name="formato">
+                  <option class="box-escolher-option" value="mp4" selected>MP4</option>
+                  <option class="box-escolher-option" value="mp3">MP3</option>
                 </select>
               </div>
             </form>
+            <div>
+              <a href={{arquivo}} download>clique aqui para baixar</a>
+            </div>
         </div><!--Form Content-->
       </div><!--wrapper-->
 </body>
